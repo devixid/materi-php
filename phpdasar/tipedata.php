@@ -29,6 +29,9 @@ $null = null;
 // Tipe data array
 $animals = ['Cat', 'Dog', 'Wolf', 'Elephant'];
 
+// or old version
+$result = array(80, 90, 100);
+
 // Menampilkan isi array animals dimulai dari index 0
 echo $animals[0];
 var_dump($animals);
@@ -41,3 +44,6 @@ $people = [
 ];
 
 echo $people["name"];
+echo $people["name"] = "John Doe";
+echo $result[] = 110;
+echo count($people);

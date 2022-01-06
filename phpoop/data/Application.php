@@ -2,9 +2,29 @@
 
 namespace Data;
 
-class Application
+interface ApplicationEnv 
 {
-    private string $appName, $appVersion, $appOs;
+    public function isDevelopment(): bool;
+
+    public function isTesting(): bool;
+
+    public function isProduction(): bool;
+}
+
+interface ApplicationContract extends ApplicationEnv
+{
+    public function __debugInfo();
+}
+
+abstract class Application implements ApplicationContract
+{
+    private string $appName, $appVersion, $appOs, $isMaintenance;
+
+    protected array $env = [
+        'development',
+        'testing',
+        'local'
+    ];
 
     protected string $appTag = '1.0rc';
 
@@ -18,11 +38,7 @@ class Application
         $this->appOs = $appOs;
     }
 
-    public function setVersion(string $version)
-    {
-        $this->appVersion = $version;
-        return $this;
-    }
+    abstract public function getServers();
 
     public function getInfoApp()
     {
@@ -31,8 +47,31 @@ class Application
             'app_name' => $this->appName,
             'app_version' => $this->appVersion,
             'app_os' => $this->appOs,
-            'app_author' => self::APP_AUTHOR // mengakses constanta menggunakan self keyword
+            'app_author' => self::APP_AUTHOR,  // mengakses constanta menggunakan self keyword
+            'app_maintenance' => $this->isMaintenance()
         ];
+    }
+
+    public function getAppName(): string
+    {
+        return $this->appName;
+    }
+
+    public function setAppName(string $value)
+    {
+        $this->appName = $value;
+        return $this;
+    }
+
+    public function isMaintenance(): bool
+    {
+        return $this->isMaintenance;
+    }
+
+    public function setMaintenance(bool $value)
+    {
+        $this->isMaintenance = $value;
+        return $this;
     }
 
     // Method ini akan dijalankan jika sebuah program mengakhiri baris kodenya

@@ -1,6 +1,6 @@
 <?php 
 
-class Application 
+class App 
 {
     public $appName, $appVersion, $appOs = 'Linux';
 
@@ -16,7 +16,7 @@ class Application
     }
 }
 
-$app = new Application;
+$app = new App;
 $app->appName = "Belajar PHP OOP";
 $app->appVersion = '1.0.1';
 $app->appOs;

@@ -16,6 +16,34 @@ interface ApplicationContract extends ApplicationEnv
     public function __debugInfo();
 }
 
+trait HasApplicationInfo
+{
+    public function getDebug(): bool
+    {
+        return false;
+    }
+
+    public function getClass(object $object): string
+    {
+        return get_class($object);
+    }
+
+    public function getClassMethods(mixed $class): array
+    {
+        return get_class_methods($class);
+    }
+}
+
+trait HasApplicationDebug 
+{
+    use HasApplicationInfo;
+
+    public function getDebug(): bool
+    {
+        return true;
+    }
+}
+
 abstract class Application implements ApplicationContract
 {
     private string $appName, $appVersion, $appOs, $isMaintenance;

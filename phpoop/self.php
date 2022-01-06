@@ -4,12 +4,15 @@ class Application
 {
     public $appName, $appVersion, $appOs = 'Linux';
 
+    public const APP_AUTHOR = 'Noval Ramdhani';
+
     public function getInfoApp()
     {
         return [
             'app_name' => $this->appName,
             'app_version' => $this->appVersion,
-            'app_os' => $this->appOs
+            'app_os' => $this->appOs,
+            'app_author' => self::APP_AUTHOR // mengakses constanta menggunakan self keyword
         ];
     }
 }

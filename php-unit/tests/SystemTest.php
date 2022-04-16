@@ -7,9 +7,7 @@ use Data\Exceptions\MySqlException;
 use Data\Exceptions\PostgreSqlException;
 use Data\Exceptions\RedisException;
 use Exception;
-use PDOException;
 use PHPUnit\Framework\TestCase;
-use SebastianBergmann\Environment\OperatingSystem;
 
 class SystemTest extends TestCase
 {
@@ -117,6 +115,37 @@ class SystemTest extends TestCase
 
     public function testIfHasCount()
     {
-        
+        // Failure if result is not same with count
+        // $this->assertCount(10, [1,2,3,4,5]);
+
+        // This success
+        $this->assertCount(5, [1,2,3,4,5]);
+    }
+
+    public function testIfDirectoryExists()
+    {
+        // Failure if directory is not exists
+        // $this->assertDirectoryExists('../app/controllers');
+
+        // This success
+        $this->assertDirectoryExists('../php-8.0');
+    }
+
+    public function testIfEmpty()
+    {
+        // Failure if value is not empty
+        // $this->assertEmpty(100);
+
+        // This success
+        $this->assertEmpty([]);
+    }
+
+    public function testIfFalse()
+    {
+        // Failure if value is true
+        // $this->assertFalse(true);
+
+        // Success
+        $this->assertFalse(false);
     }
 }

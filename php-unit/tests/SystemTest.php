@@ -114,4 +114,9 @@ class SystemTest extends TestCase
             [new MySqlException, new PostgreSqlException, new RedisException]
         );
     }
+
+    public function testIfHasCount()
+    {
+        
+    }
 }

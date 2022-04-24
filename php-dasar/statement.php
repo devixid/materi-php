@@ -77,3 +77,10 @@ foreach ($animals as $animal) {
 foreach ($animals as $key => $value) {
     echo "Key: $key => value: $value" . PHP_EOL;
 }
+
+// Match expression (PHP 8.0)
+$result = 'A';
+echo match ($result) {
+    "A" => true,
+    default => false
+};

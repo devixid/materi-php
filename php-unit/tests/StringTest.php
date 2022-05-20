@@ -36,4 +36,14 @@ class StringTest extends TestCase
         // This success
         $this->assertContainsOnly('string', $animals);
     }
+
+    public function testIfStringEqualsWithAnotherString()
+    {
+        // Success if string equals with string
+        // This failure
+        // $this->assertEquals('Laravel', 'Rails');
+
+        // This success
+        $this->assertEquals('Laravel', 'Laravel');
+    }
 }

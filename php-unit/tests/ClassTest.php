@@ -2,12 +2,12 @@
 
 namespace Tests;
 
-use App\Auth;
+use App\Examples\Auth;
 use Exception;
 use PHPUnit\Framework\TestCase;
 use App\Exceptions\RedisException;
 use App\Exceptions\PostgreSqlException;
-use App\User;
+use App\Examples\User;
 
 class ClassTest extends TestCase
 {

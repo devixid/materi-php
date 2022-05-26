@@ -7,6 +7,7 @@ use Exception;
 use PHPUnit\Framework\TestCase;
 use App\Exceptions\RedisException;
 use App\Exceptions\PostgreSqlException;
+use App\User;
 
 class ClassTest extends TestCase
 {
@@ -45,4 +46,17 @@ class ClassTest extends TestCase
             [new PostgreSqlException, new RedisException]
         );
     }
-}
+
+    public function testIfObjectEqualsWithAnotherObject()
+    {
+        $user1 = new User("novalfitrahramdhani@gmail.com");
+        $user2 = new User("novalfitrahramdhani@gmail.com");
+        $user3 = new User("johndoe123@example.org");
+
+        // Failure if object not equals
+        // $this->assertObjectEquals($user1, $user3);
+
+        // This success
+        $this->assertObjectEquals($user1, $user2);
+    }
+}   

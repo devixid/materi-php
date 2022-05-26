@@ -37,7 +37,7 @@ class StringTest extends TestCase
         $this->assertContainsOnly('string', $animals);
     }
 
-    public function testIfStringEqualsWithAnotherString()
+    public function testIfStringEqualsWithString()
     {
         // Success if string equals with string
         // This failure
@@ -45,5 +45,17 @@ class StringTest extends TestCase
 
         // This success
         $this->assertEquals('Laravel', 'Laravel');
+    }
+
+    public function testIfStringEqualsWithIgnoreCase()
+    {
+        // Success if string equals ignore case
+        // This Failure
+        // $this->assertEqualsIgnoringCase('LARAVEL', 'FRAMEWORK');
+
+        // This success
+        $string = 'I love ruby';
+
+        $this->assertEqualsIgnoringCase('I love ruby', $string);
     }
 }

@@ -58,4 +58,11 @@ class ArrayTest extends TestCase
         // This success
         $this->assertEmpty([]);
     }
+
+    public function testIfIsArray()
+    {
+        // Failure if is not array
+        $array = [1,2,3,4,5];
+        $this->assertIsArray($array);
+    }
 }

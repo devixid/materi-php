@@ -59,4 +59,10 @@ class ClassTest extends TestCase
         // This success
         $this->assertObjectEquals($user1, $user2);
     }
+
+    public function testIfInstanceOf()
+    {
+        // Success if class instance of parent class
+        $this->assertInstanceOf(Exception::class, new RedisException);
+    }
 }   

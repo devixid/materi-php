@@ -4,7 +4,7 @@ namespace Tests;
 
 use PHPUnit\Framework\TestCase;
 
-class IntegerTest extends TestCase
+class NumberTest extends TestCase
 {
     public function testIfGreaterThan()
     {
@@ -23,5 +23,17 @@ class IntegerTest extends TestCase
 
         $this->assertGreaterThanOrEqual(10, 10);
         $this->assertGreaterThanOrEqual(100, 1000);
+    }
+
+    public function testIfIsFloatingNumber()
+    {
+        // Failure if is not float
+        $this->assertIsFloat(1.5);
+    }
+
+    public function testIfIsIntegerNumber()
+    {
+        // Failure if is not integer
+        $this->assertIsInt(100);
     }
 }

@@ -36,4 +36,10 @@ class NumberTest extends TestCase
         // Failure if is not integer
         $this->assertIsInt(100);
     }
+
+    public function testIfIsNumeric()
+    {
+        // Failure if is not numeric number
+        $this->assertIsNumeric(1000);
+    }
 }

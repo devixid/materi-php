@@ -21,6 +21,6 @@ class User
 
     public function ensureIsValidEmail(string $email): mixed
     {
-
+        //
     }
 }

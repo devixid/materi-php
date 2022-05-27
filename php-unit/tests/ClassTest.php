@@ -65,4 +65,10 @@ class ClassTest extends TestCase
         // Success if class instance of parent class
         $this->assertInstanceOf(Exception::class, new RedisException);
     }
+
+    public function testIfIsObject()
+    {
+        // Failure if is not object
+        $this->assertIsObject(new User("novalramdhani@gmail.com"));
+    }
 }   

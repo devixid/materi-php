@@ -58,4 +58,12 @@ class StringTest extends TestCase
 
         $this->assertEqualsIgnoringCase('I love ruby', $string);
     }
+
+    public function testIfIsString()
+    {
+        // Failure if is not string type
+        $string = "Laravel Framework";
+
+        $this->assertIsString($string);
+    }
 }

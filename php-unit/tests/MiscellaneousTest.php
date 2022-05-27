@@ -30,4 +30,16 @@ class MiscellaneousTest extends TestCase
 
         $this->assertIsCallable($func);
     }
+
+    public function testIfIsIterable()
+    {
+        // Failure if is not iterable
+        $this->assertIsIterable(arrayIterable());
+    }
+
+    public function testIfIsScalar()
+    {
+        // Test if is not scalar type like (object, iterable, resource etc)
+        $this->assertIsScalar(true);
+    }
 }

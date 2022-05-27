@@ -4,11 +4,9 @@ namespace App\Examples;
 
 class Auth
 {
-    public string $credentials;
-
     public static string $login;
-
-    public function __construct(public string $email)
+    
+    public function __construct(public string $email, public string $credentials)
     {
         $this->email = $email;
     }

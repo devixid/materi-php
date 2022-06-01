@@ -9,8 +9,11 @@ class JsonTest extends TestCase
 {
     use JsonAssertions;
 
-    public function testIfTrue()
+    public function testIfJsonStringEqualsWithJsonString()
     {
-        $this->assertTrue(true);
+        $this->assertJsonStringEqualsJsonString(
+            json_encode(['name' => 'John Doe']),
+            json_encode(['name' => 'John Doe'])
+        );
     }
 }

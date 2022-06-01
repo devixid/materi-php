@@ -42,4 +42,9 @@ class MiscellaneousTest extends TestCase
         // Test if is not scalar type like (object, iterable, resource etc)
         $this->assertIsScalar(true);
     }
+
+    public function testIfNull()
+    {
+        $this->assertNull(null);
+    }
 }

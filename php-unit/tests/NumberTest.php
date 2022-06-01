@@ -42,4 +42,14 @@ class NumberTest extends TestCase
         // Failure if is not numeric number
         $this->assertIsNumeric(1000);
     }
+
+    public function testIfNumberLessThan()
+    {
+        $this->assertLessThan(10, 9);
+    }
+
+    public function testIfNumberLessThanOrEqual()
+    {
+        $this->assertLessThanOrEqual(1000, 1000);
+    }
 }
